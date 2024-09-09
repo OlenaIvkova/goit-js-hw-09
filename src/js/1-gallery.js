@@ -6,7 +6,11 @@ import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-const SimpleLightbox('.gallery a', { /* options */ });
+const SimpleLightbox('.gallery a', {
+    captions: true,
+    captionsDate: `alt`,
+    captionsDelay: 250,
+});
 
 console.log(SimpleLightbox);
 
