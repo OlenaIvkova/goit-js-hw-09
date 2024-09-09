@@ -1,10 +1,13 @@
-// Описаний в документації
+
 import SimpleLightbox from "simplelightbox";
 
-// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-console.log(SimpleLightbox);
+const SimpleLightbox('.gallery a', {
+    captions: true,
+    captionsDate: alt,
+    captionsDelay: 250,
+});
 
 const images = [
     {
@@ -90,8 +93,8 @@ const galleryMarkup = images.map(({ preview, original, description }) => {
 
 gallery.insertAdjacentHTML(`beforeend`, galleryMarkup);
 
-const SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250,
-});
+// const SimpleLightbox ('.gallery a', {
+//     captions: true,
+//     captionsData: 'alt',
+//     captionDelay: 250,
+// });
