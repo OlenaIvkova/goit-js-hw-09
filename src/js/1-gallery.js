@@ -1,16 +1,15 @@
-// console.log(`Gallery`);
-
 // Описаний в документації
 import SimpleLightbox from "simplelightbox";
 
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-const SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsDate: `alt`,
-    captionsDelay: 250,
-});
+// const SimpleLightbox('.gallery a', {
+//     captions: true,
+//     captionsData: 'alt',
+//     captionDelay: 250,
+// });
+
 
 console.log(SimpleLightbox);
 
@@ -80,6 +79,7 @@ const images = [
     },
 ];
 
+
 const gallery = document.querySelector('.gallery');
 
 const galleryMarkup = images.map(({ preview, original, description }) => {
@@ -89,7 +89,6 @@ const galleryMarkup = images.map(({ preview, original, description }) => {
         <img
           class="gallery-image"
           src="${preview}"
-          data-source="${original}"
           alt="${description}"
         />
       </a>
@@ -98,21 +97,8 @@ const galleryMarkup = images.map(({ preview, original, description }) => {
 
 gallery.insertAdjacentHTML(`beforeend`, galleryMarkup);
 
-gallery.addEventListener(`click`, onImageClick);
-
-function onImageClick(event) {
-    event.preventDefault();
-
-    if (event.target.nodeName !== `IMG`) {
-        return;
-    }
-
-    const largeImage = event.target.dataset.source;
-    // const imageAlt = event.target.alt;
-
-    const instance = basicLightbox.create(`
-      <img src="${largeImage}" width="360" height="200">
-  `);
-
-    instance.show();
-}
+const SimpleLightbox('.gallery a', {
+    captions: true,
+    captionsData: 'alt',
+    captionDelay: 250,
+});
