@@ -1,4 +1,3 @@
-// console.log(`Form`);
 
 let formData = {
     email: "",
