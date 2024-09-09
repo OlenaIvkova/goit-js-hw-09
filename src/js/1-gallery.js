@@ -3,11 +3,11 @@ import SimpleLightbox from "simplelightbox";
 
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-const SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsDate: alt,
-    captionsDelay: 250,
-});
+// const lightbox = new SimpleLightbox('.gallery a', {
+//     captions: true,
+//     captionsDate: alt,
+//     captionsDelay: 250,
+// });
 
 const images = [
     {
@@ -93,8 +93,8 @@ const galleryMarkup = images.map(({ preview, original, description }) => {
 
 gallery.insertAdjacentHTML(`beforeend`, galleryMarkup);
 
-// const SimpleLightbox ('.gallery a', {
-//     captions: true,
-//     captionsData: 'alt',
-//     captionDelay: 250,
-// });
+const lightbox = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionsData: 'alt',
+    captionDelay: 250,
+});
